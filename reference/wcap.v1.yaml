@@ -300,6 +300,30 @@ paths:
                   Passwd: XXXXXXX
       tags:
         - auth
+  /records:
+    get:
+      summary: get records
+      tags: []
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      operationId: getRecords
+      description: |-
+        without param, default get all records.
+        use filter to select records:
+          1.find repoter name like "xxxyinjiexxx" all records, add params in url '?filter=reporter like "yingjie"'.
+          2.find records during a certain period of time，add params in url 
+          "?filter=reporttime>=1598252348320800000 and reporttime<1598252348320899999".
+          3.return count of find records, "?returntotal=1".
+          3.use limit to return limited front records,"?limit=10".
+          4.use skip to skip some reocrds and return remain records, "?skip=10".
+          5.return actual fields, just need reporter and reporttime, "?projection=reporter,reporttime".
+          6.use sortkey to sort records with special field, defalut ascend,sort with reportertime, "?sortkey=reportertime".
+          7.sort with reporttime in descend way, "?sortkey=reporttime&desc=true".
+          8.combine find, find yingjie's records within period of time,sort by reporttime in desc, only return fisrt 5 records,
+          "?filter=reporter="yingjie" and reporttime>=1598252348320800000 and reporttime<1598252348320899999&sortkey=reporttime&desc=true&limit=5"
 tags:
   - name: teams
     description: teams related api
@@ -535,4 +559,4 @@ components:
       in: query
       description: '**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest. Must use with `lat`.'
       schema:
-        type: string  
+        type: string
