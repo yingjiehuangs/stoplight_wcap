@@ -332,8 +332,6 @@ paths:
           description: OK
         '401':
           description: Unauthorized
-        '403':
-          description: Forbidden
         '404':
           description: Not Found
       description: |-
@@ -348,7 +346,27 @@ paths:
               properties: {}
             examples:
               example-1:
-                value: {}
+                value:
+                  Reporter: testAdmin@asml.com
+                  TeamID: sdkkjdjfdkjfjj557
+                  RecordFields:
+                    Category: Realse
+                    subCategory: EPDS
+                    WorkCentent: sign off EPDS
+                    Planed: 2
+                    Actual: 2
+                    Completion: 0.8
+                  DailyFields:
+                    - Actual: 1
+                      Completion: 0.5
+                      Date: '2020-8-20'
+                      Detail: write document
+                    - Actual: 1
+                      Completion: 0.8
+                      Date: '2020-8-21'
+                      Detail: write document
+                  ReportTime: '1598252348320892600'
+                  RecordFrequency: 0
 tags:
   - name: teams
     description: teams related api
