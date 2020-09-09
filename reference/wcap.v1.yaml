@@ -302,7 +302,7 @@ paths:
         - auth
   /records:
     get:
-      summary: find records or upsert
+      summary: Records
       tags: []
       responses:
         '200':
@@ -377,7 +377,7 @@ paths:
         in: path
         required: true
     get:
-      summary: get or delete record
+      summary: Record
       tags: []
       responses:
         '200':
