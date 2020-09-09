@@ -302,7 +302,7 @@ paths:
         - auth
   /records:
     get:
-      summary: get records
+      summary: find records or upsert
       tags: []
       responses:
         '200':
