@@ -306,7 +306,9 @@ paths:
       tags: []
       responses:
         '200':
-          description: OK
+          description: Forbidden
+        '401':
+          description: Unauthorized
         '404':
           description: Not Found
       operationId: findRecrds
