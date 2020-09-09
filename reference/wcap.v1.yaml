@@ -336,8 +336,10 @@ paths:
           description: Not Found
       description: |-
         add record or update record
-        if record.ID="", it means add a new record, else it means update a record.
-        TeamID,RecordFields,ReportTime are required.
+        1.if record.ID="", it means add a new record, else it means update a record.
+        2.TeamID,RecordFields,ReportTime are required.
+        3.when add record, reportr will be overwrite as user's email,make sure team exist and teamID is correct,cause it will check if reporter belong to this team, if no, it will return error.
+        4.admin can update any record, user could only update his own records.
       requestBody:
         content:
           application/json:
