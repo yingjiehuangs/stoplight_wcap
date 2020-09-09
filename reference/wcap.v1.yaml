@@ -302,14 +302,14 @@ paths:
         - auth
   /records:
     get:
-      summary: Records
+      summary: find records
       tags: []
       responses:
         '200':
           description: OK
         '404':
           description: Not Found
-      operationId: getRecords
+      operationId: findRecrds
       description: |-
         without param, default get all records.
         use filter to select records:
@@ -325,7 +325,7 @@ paths:
           8.combine find, find yingjie's records within period of time,sort by reporttime in desc, only return fisrt 5 records,
           "?filter=reporter="yingjie" and reporttime>=1598252348320800000 and reporttime<1598252348320899999&sortkey=reporttime&desc=true&limit=5"
     post:
-      summary: ''
+      summary: upsert record
       operationId: upsertRecord
       responses:
         '200':
@@ -377,7 +377,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Record
+      summary: get record by id
       tags: []
       responses:
         '200':
@@ -389,7 +389,7 @@ paths:
       operationId: getRecordByID
       description: 'get record by id,need pass id'
     delete:
-      summary: ''
+      summary: delete record
       operationId: deleteRecord
       responses:
         '200':
