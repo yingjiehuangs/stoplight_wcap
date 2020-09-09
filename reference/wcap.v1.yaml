@@ -367,6 +367,36 @@ paths:
                       Detail: write document
                   ReportTime: '1598252348320892600'
                   RecordFrequency: 0
+  '/record/{recordID}':
+    parameters:
+      - schema:
+          type: string
+        name: recordID
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      operationId: getRecordByID
+      description: 'get record by id,need pass id'
+    delete:
+      summary: ''
+      operationId: deleteRecord
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+      description: 'admin can delete any record, user could delete his own records'
 tags:
   - name: teams
     description: teams related api
