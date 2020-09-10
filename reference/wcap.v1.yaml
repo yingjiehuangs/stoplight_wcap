@@ -326,6 +326,22 @@ paths:
           7.sort with reporttime in descend way, "?sortkey=reporttime&desc=true".
           8.combine find, find yingjie's records within period of time,sort by reporttime in desc, only return fisrt 5 records,
           "?filter=reporter="yingjie" and reporttime>=1598252348320800000 and reporttime<1598252348320899999&sortkey=reporttime&desc=true&limit=5"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              example-1:
+                value: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+        - schema:
+            type: string
+          in: header
     post:
       summary: Upsert record
       operationId: upsertRecord
@@ -340,7 +356,7 @@ paths:
         add record or update record
         1.if record.ID="", it means add a new record, else it means update a record.
         2.TeamID,RecordFields,ReportTime are required.
-        3.when add record, reportr will be overwrite as user's email,make sure team exist and teamID is correct,cause it will check if reporter belong to this team, if no, it will return error.
+        3.when add record, reporter will be overwrite as user's email,make sure team exist and teamID is correct,cause it will check if reporter belong to this team, if no, it will return error.
         4.admin can update any record, user could only update his own records.
       requestBody:
         content:
@@ -371,6 +387,7 @@ paths:
                       Detail: write document
                   ReportTime: '1598252348320892600'
                   RecordFrequency: 0
+    parameters: []
   '/record/{recordID}':
     parameters:
       - schema:
