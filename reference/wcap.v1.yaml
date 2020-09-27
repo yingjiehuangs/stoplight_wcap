@@ -320,8 +320,8 @@ paths:
           "?filter=reporttime>=1598252348320800000 and reporttime<1598252348320899999".
           3.return count of find records, "?returntotal=1".
           3.use limit to return limited front records,"?limit=10".
-          4.use skip to skip some reocrds and return remain records, "?skip=10".
-          5.return actual fields, just need reporter and reporttime, "?projection=reporter,reporttime".
+          4.use skip to skip some reocrds and return remain records, "?skip=10"
+          5.return actual fields, just need reporter and reporttime, "?projections=reporter,reporttime".
           6.use sortkey to sort records with special field, defalut ascend,sort with reportertime, "?sortkey=reportertime".
           7.sort with reporttime in descend way, "?sortkey=reporttime&desc=true".
           8.combine find, find yingjie's records within period of time,sort by reporttime in desc, only return fisrt 5 records,
