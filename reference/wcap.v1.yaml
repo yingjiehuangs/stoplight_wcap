@@ -315,7 +315,7 @@ paths:
       description: |-
         without param, default get all records.
         use filter to select records:
-          1.find repoter name like "xxxyingjiexxx" all records, add params in url '?filter=reporter like "yingjie"'.
+          1.find reporter name like "xxxyingjiexxx" all records, add params in url '?filter=reporter like "yingjie"'.
           2.find records during a certain period of time，add params in url 
           "?filter=reporttime>=1598252348320800000 and reporttime<1598252348320899999".
           3.return count of find records, "?returntotal=1".
